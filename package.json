@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "homepage":"http://anushh23.github.io/Food-app-react",
+=======
+  "homepage": "http://anushh23.github.io/Food-app-react",
+>>>>>>> b96978b (commit-2)
   "name": "food-app",
   "version": "0.1.0",
   "private": true,
@@ -14,8 +18,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+<<<<<<< HEAD
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
+=======
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+>>>>>>> b96978b (commit-2)
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
