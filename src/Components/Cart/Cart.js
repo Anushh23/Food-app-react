@@ -28,7 +28,9 @@ const Cart =(props)=>{
          </div>
          <div className={classes.actions}>
              <button className={classes['button--alt']} onClick={props.onConfirm}>Close</button>
-             {hasItem &&<button className={classes.button}>Order</button>}
+             {/* Order Button doesn't work  */}
+             {hasItem &&<button className={classes.button}>Order</button>} 
+             
          </div>
      </Modal>
   );

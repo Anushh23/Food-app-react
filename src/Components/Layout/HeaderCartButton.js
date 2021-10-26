@@ -6,9 +6,11 @@ const HeaderCartButton=(props)=>{
 
     const [btnBump, setBtnBump]= useState(false);
     const cartCtx= useContext(CartContext);
-    const numberOfItems= cartCtx.items.reduce((variable,item)=>{
-        return variable+ item.amount;
-    },0)
+    // const numberOfItems= cartCtx.items.reduce((variable,item)=>{
+    //     return variable+ item.amount;
+    // },0)
+    let numberOfItems=0;
+    cartCtx.items.map(item=>numberOfItems=numberOfItems+item.amount);
 
     useEffect(()=>{
          if(cartCtx.items.length===0){return;}

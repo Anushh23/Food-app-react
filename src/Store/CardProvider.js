@@ -1,8 +1,8 @@
 import React from 'react';
 import CartContext from './cart-context';
-import {useState, useReducer} from 'react';
+import { useReducer, useEffect} from 'react';
 
-const defaultCartState={
+let defaultCartState={
     items: [],
     totalAmount: 0,
 }
@@ -60,7 +60,15 @@ const cartReducer=(state, action)=>{
 }
 const CardProvider=(props)=>{
 
-    const [cartState, dispatchCartAction]= useReducer(cartReducer, defaultCartState)
+    //To get the data from local storage
+     let items= localStorage.getItem('itemsInCart');
+    if(items)
+       {
+            defaultCartState= JSON.parse(items);
+            console.log(defaultCartState);
+        }
+    const [cartState, dispatchCartAction]= useReducer(cartReducer,defaultCartState);
+    console.log(cartState);
     const addItemHandler=(item)=>{
          dispatchCartAction({type: 'add', item: item})
     }
@@ -74,6 +82,10 @@ const CardProvider=(props)=>{
         addItem: addItemHandler,
         removeItem: removeItemHandler,
     }
+    useEffect(()=>{
+        localStorage.setItem('itemsInCart',JSON.stringify(cartState));
+    },[cartState])
+    // {console.log(cartContext)}
     return(
         <CartContext.Provider value={cartContext}>
             {props.children}
