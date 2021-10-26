@@ -31,11 +31,7 @@ const AvailableMeals=()=>{
         },
       ];
    const mealList=DUMMY_MEALS.map(meal=>
-<<<<<<< HEAD
-       <MealItem key={meal.id} name={meal.name} description={meal.description} price={meal.price}/>
-=======
        <MealItem id={meal.id} key={meal.id} name={meal.name} description={meal.description} price={meal.price}/>
->>>>>>> b96978b (commit-2)
    )
     return(
         <section className={classes.meals}>
