@@ -7,11 +7,11 @@ const Cart =(props)=>{
     const cartCtx= useContext(CartContext);
     const hasItem= cartCtx.items.length>0;
 
-    const CartItemRemoveHandler=()=>{
-
+    const CartItemRemoveHandler=(id)=>{
+         cartCtx.removeItem(id);
     }
-    const CartItemAddHandler=()=>{
-
+    const CartItemAddHandler=(item)=>{
+          cartCtx.addItem({...item, amount:1});
     }
   return(
      <Modal onConfirm={props.onConfirm}>
