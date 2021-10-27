@@ -31,3 +31,10 @@
 button{
     z-index: 11;
 }
+
+@media screen and (max-width: 500px)
+{
+  .header{
+    padding: 0 4%;
+  }
+}
